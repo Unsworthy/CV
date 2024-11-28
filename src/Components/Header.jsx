@@ -1,19 +1,19 @@
-import { Navbar, NavbarLink } from "flowbite-react"
+const Header = ({ darkMode, setDarkMode }) => {
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
 
-const Header = () => {
-    return (
-        <Navbar fluid rounded>
-            <Navbar.Brand as={NavbarLink} >
-                <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Curriculum Vitae</span>
-            </Navbar.Brand>
-            <Navbar.Toggle />
-            <Navbar.Collapse>
-                <Navbar.Link href="#" active>
-                    2024
-                </Navbar.Link>
-            </Navbar.Collapse>
-        </Navbar>
-    )
-}
+  return (
+    <header className="flex justify-between items-center px-4 py-4 bg-blue-600 text-white shadow-lg">
+      <h1 className="text-2xl font-bold">My Portfolio</h1>
+      <button
+        onClick={toggleDarkMode}
+        className="px-4 py-2 bg-white text-blue-600 rounded-md shadow-md hover:bg-gray-200 transition"
+      >
+        {darkMode ? "Light Mode" : "Dark Mode"}
+      </button>
+    </header>
+  );
+};
 
-export default Header
+export default Header;
